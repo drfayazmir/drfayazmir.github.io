@@ -1,0 +1,388 @@
+<title>Fayaz Ahmad Mir</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,500;1,6..72,300&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+/* Layout: a single scroll column; each section opens with a mono "epoch" label,
+   as on a scored polysomnogram. One bold moment only — the hypnogram in the hero. */
+:root{
+  --bg:#f4f5f7; --surface:#ffffff; --ink:#16202b; --muted:#5a6775;
+  --line:#d9dee5; --accent:#0f6f74; --accent-soft:#e3efef; --signal:#b4653a;
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#10151b; --surface:#171e26; --ink:#e6ebf1; --muted:#9aa7b5;
+    --line:#28323d; --accent:#5fc2c4; --accent-soft:#16302f; --signal:#e0935c;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10151b; --surface:#171e26; --ink:#e6ebf1; --muted:#9aa7b5;
+  --line:#28323d; --accent:#5fc2c4; --accent-soft:#16302f; --signal:#e0935c;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:68rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:3.75rem}
+section+section{border-top:1px solid var(--line)}
+h1,h2,h3{text-wrap:balance;margin:0}
+a{color:var(--accent)}
+img{display:block;border-radius:2px}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:1.25rem;padding-block:.7rem;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:1.05rem;letter-spacing:.01em;text-decoration:none;color:var(--ink);margin-right:auto}
+.brand em{font-style:italic;color:var(--accent)}
+nav a.nl{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+nav a.nl:hover{color:var(--accent)}
+#themeBtn{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;background:none;border:1px solid var(--line);color:var(--muted);border-radius:2px;padding:.3rem .55rem;cursor:pointer}
+
+/* eyebrow */
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;display:block}
+
+/* hero */
+.hero{padding-block:4rem 3.25rem}
+.hero h1{font-family:var(--display);font-weight:300;font-size:clamp(2.1rem,7vw,3.6rem);line-height:1.1;letter-spacing:-.015em;max-width:18ch}
+.hero .sub{color:var(--muted);font-size:1.0625rem;max-width:54ch;margin-top:1.1rem}
+.hypno{margin-top:2.25rem;border:1px solid var(--line);background:var(--surface);border-radius:3px;padding:1rem .9rem .55rem}
+.hypno svg{width:100%;height:auto;max-width:100%;display:block}
+.hypno figcaption{font-family:var(--mono);font-size:.68rem;color:var(--muted);letter-spacing:.03em;margin-top:.5rem;line-height:1.5}
+.meta{display:flex;flex-wrap:wrap;gap:.45rem 1.4rem;margin-top:1.5rem;font-family:var(--mono);font-size:.74rem;color:var(--muted);letter-spacing:.02em}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem}
+@media(min-width:820px){.about{grid-template-columns:18rem minmax(0,1fr);gap:3rem}}
+.portrait{width:100%;aspect-ratio:4/5;max-width:100%;background:var(--accent-soft);border:1px solid var(--line);border-radius:3px;display:grid;place-items:center;font-family:var(--mono);font-size:.7rem;color:var(--muted);text-align:center;padding:1rem}
+.prose p{margin:0 0 1.05rem;max-width:65ch}
+.prose p.lead{font-family:var(--display);font-size:1.25rem;line-height:1.5;font-weight:300}
+.more[hidden]{display:none}
+.moreBtn{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:none;border:0;border-bottom:1px solid var(--accent);color:var(--accent);padding:0 0 2px;cursor:pointer}
+
+/* capability grid */
+.grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-top:1.75rem}
+@media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.cap{background:var(--surface);padding:1.4rem 1.25rem;min-width:0}
+.cap .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--signal)}
+.cap h3{font-family:var(--display);font-weight:500;font-size:1.1rem;margin:.4rem 0 .5rem}
+.cap p{margin:0;font-size:.92rem;color:var(--muted)}
+
+/* papers */
+.papers{display:grid;gap:1.25rem;margin-top:1.75rem}
+@media(min-width:900px){.papers{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:1.35rem 1.25rem;display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.paper .venue{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--muted);font-variant-numeric:tabular-nums}
+.paper h3{font-family:var(--display);font-weight:500;font-size:1.08rem;line-height:1.35}
+.paper p{margin:0;font-size:.92rem;color:var(--muted)}
+.paper a{margin-top:auto;font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-decoration:none;border-bottom:1px solid var(--accent);align-self:flex-start;padding-bottom:1px}
+
+/* tabs */
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1.5rem;border-bottom:1px solid var(--line);padding-bottom:.6rem}
+.tabs button{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:none;border:1px solid transparent;color:var(--muted);padding:.4rem .7rem;border-radius:2px;cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.panel{padding-top:1.5rem}
+.panel[hidden]{display:none}
+
+/* lists */
+.entry{padding-block:1.1rem;border-bottom:1px solid var(--line);min-width:0}
+.entry:last-child{border-bottom:0}
+.entry h3{font-family:var(--display);font-weight:500;font-size:1.05rem;line-height:1.4}
+.entry .line{font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.03em;margin-top:.35rem;font-variant-numeric:tabular-nums}
+.entry p{margin:.5rem 0 0;font-size:.93rem;color:var(--muted)}
+.authors{font-size:.88rem;color:var(--muted);margin-top:.35rem}
+.authors b{color:var(--ink);font-weight:600}
+
+/* beyond */
+.beyond{display:grid;gap:1.25rem;margin-top:1.75rem}
+@media(min-width:760px){.beyond{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:1.4rem 1.25rem;min-width:0}
+.card h3{font-family:var(--display);font-weight:500;font-size:1.1rem;margin-bottom:.3rem}
+.card .quote{font-family:var(--display);font-style:italic;color:var(--signal);font-size:.98rem;margin-bottom:.6rem}
+.card p{margin:0;font-size:.93rem;color:var(--muted)}
+
+/* contact */
+.contact{display:grid;gap:1.5rem}
+@media(min-width:760px){.contact{grid-template-columns:minmax(0,1fr) 20rem}}
+.copyrow{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.copyrow code{font-family:var(--mono);font-size:.85rem;background:var(--accent-soft);padding:.3rem .5rem;border-radius:2px;word-break:break-all}
+.copyrow button{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;background:none;border:1px solid var(--line);color:var(--muted);border-radius:2px;padding:.3rem .55rem;cursor:pointer}
+.links{display:flex;flex-direction:column;gap:.5rem;font-family:var(--mono);font-size:.78rem;margin-top:1.25rem}
+footer{border-top:1px solid var(--line);padding-block:1.75rem;font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.03em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(prefers-reduced-motion:no-preference){.trace{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.6s ease-out .25s forwards}}
+@keyframes draw{to{stroke-dashoffset:0}}
+</style>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Fayaz <em>Ahmad Mir</em></a>
+    <a class="nl" href="#about">About</a>
+    <a class="nl" href="#bench">Bench</a>
+    <a class="nl" href="#work">Work</a>
+    <a class="nl" href="#journey">Journey</a>
+    <a class="nl" href="#contact">Contact</a>
+    <button id="themeBtn" type="button">Dark</button>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Sleep · Bioenergetics · Neurodegeneration</span>
+    <h1>What the sleeping brain spends, and what it protects.</h1>
+    <p class="sub">I study how brainstem noradrenergic circuits set sleep–wake state, and how the energy economy of sleep changes in the aging and Alzheimer's brain. Postdoctoral fellow in the Sleep and Metabolism Laboratory, Massachusetts General Hospital and Harvard Medical School.</p>
+
+    <figure class="hypno">
+      <svg viewBox="0 0 720 190" role="img" aria-label="Hypnogram across an eight-hour night, with sleep stage on the vertical axis and time on the horizontal axis">
+        <g font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--muted)">
+          <text x="4" y="28">W</text><text x="4" y="62">REM</text>
+          <text x="4" y="96">N1</text><text x="4" y="130">N2</text><text x="4" y="164">N3</text>
+        </g>
+        <g stroke="var(--line)" stroke-width="1">
+          <line x1="44" y1="24" x2="712" y2="24"/><line x1="44" y1="58" x2="712" y2="58"/>
+          <line x1="44" y1="92" x2="712" y2="92"/><line x1="44" y1="126" x2="712" y2="126"/>
+          <line x1="44" y1="160" x2="712" y2="160"/>
+        </g>
+        <polyline class="trace" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"
+          points="44,24 76,24 76,92 96,92 96,126 150,126 150,160 212,160 212,126 250,126 250,58 288,58 288,126 340,126 340,160 382,160 382,126 420,126 420,58 472,58 472,126 520,126 520,92 548,92 548,58 606,58 606,126 644,126 644,58 690,58 690,24 712,24"/>
+        <g fill="var(--signal)" opacity=".9">
+          <rect x="250" y="54" width="38" height="4" rx="2"/><rect x="420" y="54" width="52" height="4" rx="2"/>
+          <rect x="548" y="54" width="58" height="4" rx="2"/><rect x="644" y="54" width="46" height="4" rx="2"/>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--muted)">
+          <text x="44" y="182">23:00</text><text x="210" y="182">01:00</text>
+          <text x="376" y="182">03:00</text><text x="542" y="182">05:00</text><text x="668" y="182">07:00</text>
+        </g>
+      </svg>
+      <figcaption>Idealized hypnogram of a consolidated night. REM bouts (copper) lengthen toward morning as slow-wave pressure dissipates — the architecture my recordings are built to resolve.</figcaption>
+    </figure>
+
+    <div class="meta">
+      <span>Massachusetts General Hospital</span>
+      <span>Harvard Medical School</span>
+      <span>Boston, MA</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="portrait">Replace with a photo:<br>images/portrait.jpg</div>
+    <div class="prose">
+      <span class="eyebrow">About</span>
+      <p class="lead">I came to sleep research through the brainstem, and I have not really left it.</p>
+      <p>My doctoral work at Jawaharlal Nehru University, with Professor Sushil K. Jha, asked a narrow question that turned out to open onto a much wider one: how does the brain's chemosensory machinery decide when REM sleep is permitted? Working in the locus coeruleus and the nucleus tractus solitarius, I found that acid-sensing ion channels and inwardly rectifying potassium channels do more than report CO₂ — they gate the NREM-to-REM transition itself. State regulation and metabolic sensing are not parallel systems. They are the same system, read at different timescales.</p>
+      <div class="more" id="aboutMore">
+        <p>That conclusion is what moved me toward bioenergetics. At MGH, in Dr. Christa Nehs's laboratory, I record extracellular ATP with GRAB-ATP1.0 alongside chronic EEG/EMG polysomnography in freely behaving mice, which lets me ask what the energetic cost of each vigilance state actually is and how that cost shifts with age, with ketogenic diet, and in amyloid-bearing models. The working hypothesis — ATP dynamics, sleep architecture, and glymphatic clearance as one coupled loop — is still a hypothesis, and parts of it will probably be wrong. The parts I can test, I am testing.</p>
+        <p>Most of what I do is building: surgeries, viral vectors, fiber placements, and the MATLAB pipelines that turn a night of photometry and EEG into scored, aligned, analyzable signal. I have spent as much time debugging artifact rejection as designing experiments, and I have stopped treating that as a distraction from the science.</p>
+        <p>My training is entirely in rodents. I am clear-eyed about what that means for translation, and I think the honest version of the work is more useful than the inflated one.</p>
+      </div>
+      <button class="moreBtn" id="moreBtn" type="button" aria-expanded="false" aria-controls="aboutMore">Read further ↓</button>
+    </div>
+  </div>
+</section>
+
+<section id="bench">
+  <div class="wrap">
+    <span class="eyebrow">Capability</span>
+    <h2 style="font-family:var(--display);font-weight:300;font-size:clamp(1.6rem,4.5vw,2.3rem)">What I bring to the rig</h2>
+    <div class="grid">
+      <div class="cap"><span class="tag">In vivo</span><h3>Chronic polysomnography</h3><p>EEG/EMG headmounts, multi-day recordings in freely behaving mice and rats, and sleep scoring pipelines validated against manual epochs.</p></div>
+      <div class="cap"><span class="tag">Photometry</span><h3>Fiber photometry</h3><p>GRAB-ATP1.0 and GCaMP6 recordings time-locked to vigilance state, including dual-site configurations and motion-corrected ΔF/F extraction.</p></div>
+      <div class="cap"><span class="tag">Circuits</span><h3>Causal manipulation</h3><p>Stereotaxic surgery, AAV vector delivery, DREADD-based chemogenetics, and targeted microinjection into brainstem nuclei.</p></div>
+      <div class="cap"><span class="tag">Imaging</span><h3>Two-photon microscopy</h3><p>Longitudinal in vivo imaging for cellular and vascular readouts in disease models, paired with histological validation.</p></div>
+      <div class="cap"><span class="tag">Analysis</span><h3>Signal pipelines</h3><p>MATLAB, Python, and R workflows for spectral analysis, state classification, event detection, and photometry–EEG alignment from TDT systems.</p></div>
+      <div class="cap"><span class="tag">Models</span><h3>Aging &amp; Alzheimer's</h3><p>Amyloid-bearing and aged cohorts, dietary interventions, and sleep-deprivation paradigms designed around the constraints of each model.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <span class="eyebrow">Selected work</span>
+    <h2 style="font-family:var(--display);font-weight:300;font-size:clamp(1.6rem,4.5vw,2.3rem)">Research highlights</h2>
+    <div class="papers">
+      <article class="paper">
+        <span class="venue">Neurosci Biobehav Rev · 2025</span>
+        <h3>Noradrenergic dysregulation in the locus coeruleus</h3>
+        <p>A systematic review tracing how LC noradrenergic decline intersects with disrupted sleep across neuropsychiatric and neurodegenerative disease, and where the causal arrows remain unresolved.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/41167443/">Read paper →</a>
+      </article>
+      <article class="paper">
+        <span class="venue">Scientific Reports · 2024</span>
+        <h3>Kir channels in the NTS gate REM sleep</h3>
+        <p>Barium blockade of inwardly rectifying potassium channels in the nucleus tractus solitarius reduced wakefulness and shifted REM output, placing a chemosensory relay directly inside the REM executive network.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/39289431/">Read paper →</a>
+      </article>
+      <article class="paper">
+        <span class="venue">Neurosci Bull · 2021</span>
+        <h3>LC acid-sensing ion channels and state transition</h3>
+        <p>ASICs in the locus coeruleus modulate sleep–wakefulness and the NREM-to-REM transition, suggesting that a mild CO₂ rise during NREM is one of the signals permitting entry into REM.</p>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/33638800/">Read paper →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <span class="eyebrow">Scientific journey</span>
+    <h2 style="font-family:var(--display);font-weight:300;font-size:clamp(1.6rem,4.5vw,2.3rem)">Training, publications, and the rest of the record</h2>
+
+    <div class="tabs" role="tablist">
+      <button role="tab" id="t-pubs" aria-controls="p-pubs" aria-selected="true">Publications</button>
+      <button role="tab" id="t-edu" aria-controls="p-edu" aria-selected="false">Education</button>
+      <button role="tab" id="t-conf" aria-controls="p-conf" aria-selected="false">Conferences</button>
+      <button role="tab" id="t-aw" aria-controls="p-aw" aria-selected="false">Awards</button>
+    </div>
+
+    <div class="panel" id="p-pubs" role="tabpanel" aria-labelledby="t-pubs">
+      <div class="entry">
+        <h3>Noradrenergic dysregulation in the locus coeruleus: implications for neuropsychiatric disease pathophysiology — a systematic review</h3>
+        <div class="authors"><b>Mir FA</b>, Jha SK, Nehs CJ</div>
+        <div class="line">Neuroscience &amp; Biobehavioral Reviews · 2025 · 179:106442 · <a href="https://pubmed.ncbi.nlm.nih.gov/41167443/">PubMed</a></div>
+      </div>
+      <div class="entry">
+        <h3>The Kir channel in the nucleus tractus solitarius integrates the chemosensory system with REM sleep executive machinery for homeostatic balance</h3>
+        <div class="authors"><b>Mir FA</b>, Jha SK</div>
+        <div class="line">Scientific Reports · 2024 · 14:21651 · <a href="https://pubmed.ncbi.nlm.nih.gov/39289431/">PubMed</a></div>
+      </div>
+      <div class="entry">
+        <h3>Proton pump inhibitor lansoprazole inhibits locus coeruleus neuronal activity and increases rapid eye movement sleep</h3>
+        <div class="authors"><b>Mir FA</b>, Jha SK</div>
+        <div class="line">ACS Chemical Neuroscience · 2021 · 12(22):4265–4274 · <a href="https://pubmed.ncbi.nlm.nih.gov/34730349/">PubMed</a></div>
+      </div>
+      <div class="entry">
+        <h3>Locus coeruleus acid-sensing ion channels modulate sleep–wakefulness and state transition from NREM to REM sleep in the rat</h3>
+        <div class="authors"><b>Mir FA</b>, Jha SK</div>
+        <div class="line">Neuroscience Bulletin · 2021 · 37(5):684–700 · <a href="https://pubmed.ncbi.nlm.nih.gov/33638800/">PubMed</a></div>
+      </div>
+      <div class="entry">
+        <p>Add your remaining publications and three book chapters here — one <code>&lt;div class="entry"&gt;</code> block each. Full list on <a href="#">Google Scholar</a>.</p>
+      </div>
+    </div>
+
+    <div class="panel" id="p-edu" role="tabpanel" aria-labelledby="t-edu" hidden>
+      <div class="entry">
+        <h3>Postdoctoral Research Fellow</h3>
+        <div class="line">Sleep and Metabolism Laboratory · Department of Anesthesia, Critical Care and Pain Medicine</div>
+        <p>Massachusetts General Hospital and Harvard Medical School, with Dr. Christa J. Nehs. Fiber photometry of brain energy metabolism across vigilance states in aging and Alzheimer's models.</p>
+      </div>
+      <div class="entry">
+        <h3>Ph.D. in Neuroscience</h3>
+        <div class="line">Jawaharlal Nehru University, New Delhi, India</div>
+        <p>School of Life Sciences, with Professor Sushil K. Jha. Chemosensory regulation of sleep–wake state by brainstem locus coeruleus and nucleus tractus solitarius circuits.</p>
+      </div>
+      <div class="entry">
+        <h3>Earlier degrees</h3>
+        <div class="line">Add M.Sc. / B.Sc. institutions and years here</div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-conf" role="tabpanel" aria-labelledby="t-conf" hidden>
+      <div class="entry">
+        <h3>Gordon Research Conferences</h3>
+        <div class="line">Four meetings · sleep regulation and neurodegeneration</div>
+        <p>Replace this with the individual meetings, years, and what you presented at each — poster or talk, and the finding it carried.</p>
+      </div>
+      <div class="entry">
+        <h3>Add further meetings</h3>
+        <div class="line">SfN · SLEEP · others</div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-aw" role="tabpanel" aria-labelledby="t-aw" hidden>
+      <div class="entry">
+        <h3>Add fellowships, travel awards, and honors</h3>
+        <div class="line">Awarding body · year</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="beyond">
+  <div class="wrap">
+    <span class="eyebrow">Beyond the bench</span>
+    <div class="beyond">
+      <div class="card">
+        <h3>Reading</h3>
+        <div class="quote">"The books that stay with me are the ones that complicate a question."</div>
+        <p>Replace with what you actually read — poetry, history, whichever authors have shaped how you think. This section works best when it is specific and slightly unexpected.</p>
+      </div>
+      <div class="card">
+        <h3>Add a second interest</h3>
+        <div class="quote">"A line you would actually say."</div>
+        <p>Hiking, cooking, photography, mentoring, cricket — whatever gives a reader a sense of you outside the recording rig.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div>
+      <span class="eyebrow">Contact</span>
+      <h2 style="font-family:var(--display);font-weight:300;font-size:clamp(1.6rem,4.5vw,2.3rem)">Let's talk</h2>
+      <p style="color:var(--muted);max-width:55ch">If you are working on sleep regulation, brain energy metabolism, or the circuits that connect them — or if something here lines up with a problem you are stuck on — I would like to hear about it.</p>
+      <div class="copyrow">
+        <code id="email">rehaanfayaz@gmail.com</code>
+        <button id="copyBtn" type="button">Copy</button>
+      </div>
+    </div>
+    <div>
+      <div class="links">
+        <a href="#">Google Scholar →</a>
+        <a href="#">LinkedIn →</a>
+        <a href="https://www.ncbi.nlm.nih.gov/myncbi/">PubMed bibliography →</a>
+        <a href="#">Download CV (PDF) →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© 2026 Fayaz Ahmad Mir · Massachusetts General Hospital · Harvard Medical School</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  function cur(){var a=root.getAttribute('data-theme');if(a)return a;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  function paint(){btn.textContent=cur()==='dark'?'Light':'Dark';}
+  btn.addEventListener('click',function(){
+    var n=cur()==='dark'?'light':'dark';root.setAttribute('data-theme',n);
+    try{localStorage.setItem('fam-theme',n)}catch(e){} paint();});
+  try{var s=localStorage.getItem('fam-theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
+  paint();
+
+  var mb=document.getElementById('moreBtn'), more=document.getElementById('aboutMore');
+  more.hidden=true;
+  mb.addEventListener('click',function(){
+    var open=!more.hidden?false:true; more.hidden=!open;
+    mb.setAttribute('aria-expanded',String(open));
+    mb.textContent=open?'Read less ↑':'Read further ↓';});
+
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(o){
+      var sel=o===t; o.setAttribute('aria-selected',String(sel));
+      document.getElementById(o.getAttribute('aria-controls')).hidden=!sel;});});});
+
+  var cb=document.getElementById('copyBtn');
+  cb.addEventListener('click',function(){
+    var txt=document.getElementById('email').textContent;
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(function(){cb.textContent='Copied';
+        setTimeout(function(){cb.textContent='Copy'},1600);})
+      .catch(function(){sel()});
+    } else {sel();}
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));
+      var s=window.getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='Select + copy';
+      setTimeout(function(){cb.textContent='Copy'},2200);}
+  });
+})();
+</script>
